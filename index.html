@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Beacon — NIST SP 800-171 &amp; CMMC guidance | Canopy Harbor LLC</title>
+  <meta name="description" content="Beacon by Canopy Harbor LLC: plain-language orientation to NIST SP 800-171 and CMMC for modern cloud and hybrid shops. Journey outline, certifications, official references, and a downloadable readiness checklist." />
+  <meta name="theme-color" content="#1B2A4A" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">
+          <strong>Beacon</strong>
+          <span>by Canopy Harbor LLC</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#requirements">Requirements</a>
+        <a href="#journey">Journey</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#references">References</a>
+        <a href="#download">Checklist</a>
+      </nav>
+    </div>
+  </header>
+  <div class="beam" aria-hidden="true"></div>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-inner">
+        <span class="eyebrow">Steady light for regulated work</span>
+        <h1>Find your bearing on NIST SP 800-171 &amp; CMMC</h1>
+        <p class="hero-lead">
+          Beacon is Canopy Harbor’s plain-language guide for modern cloud and hybrid shops
+          that handle Federal contract information (FCI) or Controlled Unclassified Information (CUI).
+          We translate the official framework into readable orientation—without replacing
+          the primary sources or a formal assessment.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#download">Download readiness checklist (PDF)</a>
+          <a class="btn btn-ghost" href="#requirements">See Level 2 essentials</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="section-inner">
+        <h2>What this is about</h2>
+        <p class="lede">
+          <strong>NIST SP 800-171</strong> is NIST’s catalog of security requirements for protecting CUI in nonfederal systems.
+          <strong>CMMC</strong> (Cybersecurity Maturity Model Certification) is the DoD program that assesses whether contractors
+          meet those (and related) requirements at defined levels, with results used in contracting.
+        </p>
+        <div class="grid-3">
+          <article class="card">
+            <h3>For cloud / hybrid teams</h3>
+            <p>Identities in Entra ID, devices in Intune, workloads in Azure or SaaS, and logs that someone actually reviews—scope and evidence live across those boundaries.</p>
+          </article>
+          <article class="card">
+            <h3>Level 2 focus</h3>
+            <p>Most CUI conversations center on CMMC Level 2, which aligns to the NIST SP 800-171 Rev. 2 security requirements as incorporated in 32 CFR Part 170.</p>
+          </article>
+          <article class="card">
+            <h3>Orientation, not counsel</h3>
+            <p>Beacon helps you ask better questions and organize work. It is not legal advice, not a certification, and not a substitute for official guides or qualified assessors.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="requirements">
+      <div class="section-inner">
+        <h2>Requirements — ins &amp; outs</h2>
+        <p class="lede">
+          CMMC has three levels. Assessment type (self vs third-party / government) matters as much as the level number.
+          Always read your solicitation and the current Code of Federal Regulations—not a blog summary.
+        </p>
+        <div class="grid-3">
+          <article class="card">
+            <span class="level-pill">Level 1</span>
+            <h3>FCI basics</h3>
+            <p>Aligned to the 15 basic safeguarding requirements in FAR 52.204-21. Typically a self-assessment path for Federal contract information (not CUI).</p>
+          </article>
+          <article class="card">
+            <span class="level-pill l2">Level 2</span>
+            <h3>CUI — 800-171 Rev. 2</h3>
+            <p>110 security requirements from NIST SP 800-171 Revision 2. May be <strong>self</strong> or <strong>C3PAO certification assessment</strong>, depending on what the contract requires.</p>
+          </article>
+          <article class="card">
+            <span class="level-pill l3">Level 3</span>
+            <h3>Enhanced / DIBCAC</h3>
+            <p>Selected enhanced requirements from NIST SP 800-172 for higher-sensitivity programs. Government (DIBCAC) assessment path as defined in the rule.</p>
+          </article>
+        </div>
+
+        <div class="grid-2" style="margin-top:1.5rem">
+          <article class="card">
+            <h3>Assessment objectives &amp; scoring</h3>
+            <ul>
+              <li><strong>NIST SP 800-171A</strong> defines assessment objectives used to decide Met / Not Met.</li>
+              <li>CMMC scoring methodology (32 CFR) measures implementation status; partial credit is limited.</li>
+              <li>Conditional status with a valid <strong>POA&amp;M</strong> may be allowed under rule constraints—closeout windows apply.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>SSP, POA&amp;M, SPRS, monitoring</h3>
+            <ul>
+              <li><strong>SSP</strong> — how your scoped environment implements the requirements.</li>
+              <li><strong>POA&amp;M</strong> — tracked gaps with owners and closure criteria (rule-limited for assessments).</li>
+              <li><strong>SPRS</strong> — Supplier Performance Risk System entries / affirmations as required by DFARS and the CMMC program.</li>
+              <li><strong>Continuous monitoring</strong> — living evidence, not a one-time binder.</li>
+            </ul>
+          </article>
+        </div>
+
+        <article class="card" style="margin-top:1.25rem">
+          <h3>Modern environment notes</h3>
+          <p>
+            Expect gap work (and assessors) to look at <strong>Entra ID</strong> (MFA, Conditional Access, privileged roles),
+            <strong>Intune</strong> / endpoint compliance and encryption, <strong>Azure</strong> / M365 configuration and logging,
+            SIEM or Defender review practices, and how <strong>SaaS</strong> boundaries are drawn (shared responsibility, CRM excerpts, encryption, process controls).
+            “It’s in the cloud” is not a control—evidence is.
+          </p>
+        </article>
+
+        <p class="disclaimer" style="border:0;margin-top:1rem;padding-top:0">
+          Program status changes. Confirm current expectations on
+          <a href="https://dodcio.defense.gov/CMMC/" rel="noopener noreferrer">dodcio.defense.gov/CMMC</a>
+          before planning contractual milestones (including any published phase / implementation notices).
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="journey">
+      <div class="section-inner">
+        <h2>Company journey guide</h2>
+        <p class="lede">
+          A practical outline many teams follow. Durations vary widely with scope size, legacy debt, and staffing—
+          treat timelines as planning ranges, not promises.
+        </p>
+        <ol class="steps">
+          <li>
+            <strong>Discover scope</strong>
+            Inventory contracts, FCI/CUI touchpoints, identities, endpoints, cloud tenants, and external providers.
+            Decide enclave vs broader enterprise assessment scope.
+          </li>
+          <li>
+            <strong>Gap assessment</strong>
+            Map NIST SP 800-171 Rev. 2 requirements and 800-171A objectives to reality. Score honestly. Seed the POA&amp;M.
+          </li>
+          <li>
+            <strong>Remediate</strong>
+            Close high-impact gaps first: phishing-resistant MFA where needed, admin boundaries, logging/review, encryption, endpoint hygiene, backup/IR readiness.
+          </li>
+          <li>
+            <strong>Document</strong>
+            Build a usable SSP, diagrams, policies that match practice, and an evidence index tied to objectives—not orphan screenshots.
+          </li>
+          <li>
+            <strong>Mock assess</strong>
+            Internal or advisor dry-run. Fix narrative and artifact gaps before money and calendar are on the line.
+          </li>
+          <li>
+            <strong>Official path</strong>
+            Complete self-assessment / SPRS steps when required; engage an authorized <strong>C3PAO</strong> when your contracts require Level 2 certification assessment.
+          </li>
+          <li>
+            <strong>Maintain</strong>
+            Continuous monitoring, change control for scope creep, and annual affirmations as applicable. Certification is not a finish line.
+          </li>
+        </ol>
+        <p class="disclaimer">
+          Rough planning ranges heard from industry (illustrative only): focused enclave remediation can be months;
+          enterprise-wide lifts often run longer. C3PAO scheduling itself can add wait time. Build contingency—do not bid the best case.
+        </p>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="certifications">
+      <div class="section-inner">
+        <h2>Certifications — company vs individual</h2>
+        <p class="lede">
+          Do not confuse your <em>company’s</em> CMMC status with <em>individual</em> ecosystem credentials.
+          Official role definitions live in 32 CFR Part 170 and with the Cyber AB / CAICO.
+        </p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Who</th>
+                <th>What it is</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Organization (OSA / OSC)</strong></td>
+                <td>CMMC Status at Level 1 (Self), Level 2 (Self), Level 2 (C3PAO), or Level 3 (DIBCAC), as applicable</td>
+                <td>Driven by contract requirements and assessment results entered for DoD use (e.g., SPRS / program systems). Not the same as an individual’s CCP/CCA.</td>
+              </tr>
+              <tr>
+                <td><strong>CCP</strong> — CMMC Certified Professional</td>
+                <td>Foundational individual credential in the assessment ecosystem</td>
+                <td>Training via an Approved Training Provider, exam, application requirements, and DoD Tier 3 determination as required by the program / Cyber AB pathway.</td>
+              </tr>
+              <tr>
+                <td><strong>CCA</strong> — CMMC Certified Assessor</td>
+                <td>Assessor who conducts Level 2 certification assessments with a C3PAO</td>
+                <td>Requires active CCP path plus additional experience, 8140-aligned baseline qualification, training/exam, and other 32 CFR § 170.11 requirements.</td>
+              </tr>
+              <tr>
+                <td><strong>C3PAO</strong></td>
+                <td>Organization authorized/accredited to perform Level 2 certification assessments</td>
+                <td>Companies seeking certification hire a C3PAO; they do not “become” a C3PAO by passing CCP.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="margin-top:1rem">
+          Start here:
+          <a href="https://cyberab.org/CMMC-Ecosystem/Ecosystem-Roles/Assessing-and-Certification" rel="noopener noreferrer">Cyber AB — Assessing and Certification</a>
+          ·
+          <a href="https://www.ecfr.gov/current/title-32/subtitle-A/chapter-I/subchapter-G/part-170/subpart-C/section-170.11" rel="noopener noreferrer">32 CFR § 170.11 (CCA)</a>
+          ·
+          <a href="https://www.isaca.org/credentialing/ccp" rel="noopener noreferrer">ISACA CCP overview</a>
+          (exam delivery partner materials; confirm against Cyber AB for current requirements).
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="references">
+      <div class="section-inner">
+        <h2>References — official sources</h2>
+        <p class="lede">Prefer .gov and primary publishers. Re-check URLs before citing in contracts.</p>
+        <ul class="refs">
+          <li>
+            <a href="https://dodcio.defense.gov/CMMC/" rel="noopener noreferrer">DoD CIO — CMMC Program</a>
+            <span>Official program home, FAQs, and current notices.</span>
+          </li>
+          <li>
+            <a href="https://dodcio.defense.gov/cmmc/Resources-Documentation/" rel="noopener noreferrer">CMMC Resources &amp; Documentation</a>
+            <span>Model overview, Level 1/2 scoping and assessment guides, SPRS briefs.</span>
+          </li>
+          <li>
+            <a href="https://dodcio.defense.gov/Portals/0/Documents/CMMC/AssessmentGuideL2v2.pdf" rel="noopener noreferrer">CMMC Assessment Guide — Level 2 (PDF)</a>
+            <span>DoD supplemental assessment guidance for Level 2.</span>
+          </li>
+          <li>
+            <a href="https://dodcio.defense.gov/Portals/0/Documents/CMMC/ScopingGuideL2v2.pdf" rel="noopener noreferrer">CMMC Scoping Guide — Level 2 (PDF)</a>
+            <span>How to define assessment scope for Level 2.</span>
+          </li>
+          <li>
+            <a href="https://csrc.nist.gov/pubs/sp/800/171/r2/upd1/final" rel="noopener noreferrer">NIST SP 800-171 Rev. 2</a>
+            <span>Security requirements incorporated for CMMC Level 2 under 32 CFR Part 170.</span>
+          </li>
+          <li>
+            <a href="https://csrc.nist.gov/pubs/sp/800/171/a/final" rel="noopener noreferrer">NIST SP 800-171A</a>
+            <span>Assessment procedures / objectives companion referenced by the CMMC rule.</span>
+          </li>
+          <li>
+            <a href="https://csrc.nist.gov/pubs/sp/800/171/r3/final" rel="noopener noreferrer">NIST SP 800-171 Rev. 3</a>
+            <span>Current NIST revision—track DoD adoption separately from today’s CMMC Level 2 baseline.</span>
+          </li>
+          <li>
+            <a href="https://www.ecfr.gov/current/title-32/subtitle-A/chapter-I/subchapter-G/part-170" rel="noopener noreferrer">32 CFR Part 170 — CMMC Program</a>
+            <span>Binding program rule text.</span>
+          </li>
+          <li>
+            <a href="https://www.acquisition.gov/dfars/252.204-7012-safeguarding-covered-defense-information-and-cyber-incident-reporting." rel="noopener noreferrer">DFARS 252.204-7012</a>
+            <span>Safeguarding covered defense information &amp; cyber incident reporting.</span>
+          </li>
+          <li>
+            <a href="https://www.ecfr.gov/current/title-48/chapter-2/subchapter-H/part-252/subpart-252.2/section-252.204-7021" rel="noopener noreferrer">DFARS 252.204-7021</a>
+            <span>Contractor compliance with CMMC level requirements.</span>
+          </li>
+          <li>
+            <a href="https://www.acq.osd.mil/asda/dpc/cp/cyber/cmmc.html" rel="noopener noreferrer">ASD(A) DPC — CMMC policy page</a>
+            <span>Acquisition / contract policy context.</span>
+          </li>
+          <li>
+            <a href="https://cyberab.org/" rel="noopener noreferrer">The Cyber AB</a>
+            <span>Accreditation Body / ecosystem directory and individual certification pathways.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="download">
+      <div class="section-inner">
+        <div class="callout">
+          <div>
+            <h2>Downloadable readiness checklist</h2>
+            <p>
+              Multi-page PDF covering company readiness, NIST SP 800-171 family evidence reminders for cloud/hybrid shops,
+              journey milestones, and a documentation pack checklist. Free to use internally; still not an assessment.
+            </p>
+          </div>
+          <a class="btn btn-primary" href="/downloads/beacon-cmmc-readiness-checklist.pdf" download>
+            Download PDF
+          </a>
+        </div>
+        <p class="disclaimer">
+          © Canopy Harbor LLC. Beacon content is for general informational purposes only and does not create an attorney–client,
+          assessor–client, or consulting relationship. Official requirements control in the event of any conflict. Not legal advice.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <strong>Beacon</strong> by Canopy Harbor LLC<br />
+        <a href="https://beacon.adavis.cloud">beacon.adavis.cloud</a>
+      </div>
+      <div>
+        Sibling site:
+        <a href="https://chllc.adavis.cloud">chllc.adavis.cloud</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

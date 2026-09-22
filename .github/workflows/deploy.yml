@@ -1,0 +1,73 @@
+# Deploy Beacon to zen88 over SSH as a Docker Compose static stack.
+# Server: root@74.208.35.191  →  /var/www/beacon
+# Published as 127.0.0.1:4843; nginx (beacon.adavis.cloud) reverse-proxies to it.
+#
+# Required GitHub Actions secret:
+#   SSH_PRIVATE_KEY  — private key authorized for root@74.208.35.191
+
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+env:
+  HOST: 74.208.35.191
+  REMOTE_USER: root
+  REMOTE_DIR: /var/www/beacon
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure SSH
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          set -euo pipefail
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+
+          if [ -z "${SSH_PRIVATE_KEY//[$' \t\r\n']/}" ]; then
+            echo "ERROR: secrets.SSH_PRIVATE_KEY is empty or unset."
+            exit 1
+          fi
+
+          decoded=0
+          if printf '%s' "$SSH_PRIVATE_KEY" | base64 -d > ~/.ssh/deploy_key 2>/dev/null \
+            && grep -qE 'BEGIN .*PRIVATE KEY' ~/.ssh/deploy_key; then
+            decoded=1
+            echo "Loaded SSH key from base64-encoded variable"
+          fi
+
+          if [ "$decoded" -eq 0 ]; then
+            printf '%s' "$SSH_PRIVATE_KEY" | sed 's/\r$//' > ~/.ssh/deploy_key
+            if ! grep -qE 'BEGIN .*PRIVATE KEY' ~/.ssh/deploy_key; then
+              printf '%s' "$SSH_PRIVATE_KEY" | sed 's/\r//g; s/\\n/\n/g' > ~/.ssh/deploy_key
+            fi
+            echo "Loaded SSH key as PEM text"
+          fi
+
+          if [ -s ~/.ssh/deploy_key ] && [ "$(tail -c1 ~/.ssh/deploy_key | wc -c)" -ne 0 ]; then
+            if [ "$(tail -c1 ~/.ssh/deploy_key | wc -l)" -eq 0 ]; then
+              echo >> ~/.ssh/deploy_key
+            fi
+          fi
+          chmod 600 ~/.ssh/deploy_key
+
+          if ! ssh-keygen -y -f ~/.ssh/deploy_key >/dev/null 2>&1; then
+            echo "ERROR: deploy_key is not a valid SSH private key."
+            exit 1
+          fi
+          echo "SSH private key OK ($(wc -l < ~/.ssh/deploy_key) lines)"
+
+          ssh-keyscan -H "${{ env.HOST }}" >> ~/.ssh/known_hosts 2>/dev/null
+
+      - name: Deploy
+        env:
+          SSH_KEY: /home/runner/.ssh/deploy_key
+        run: bash scripts/deploy.sh
